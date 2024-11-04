@@ -9,7 +9,7 @@ import { StyledButton, StyledList } from './StyledButton';
  * @see {@link https://www.figma.com/design/utT32w0P6SLGau5Hub6xzo/Multi---Design-System?node-id=490-9404&t=QLJxRIMSWSHqMwVs-4} Figma Component
  * @since 1.0.0
  *  */
-const SplitButton = ({ label, onClick, itemsList, ...props }: SplitButtonProps) => {
+const SplitButton = ({ label, onClick, itemsList }: SplitButtonProps) => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const paperRef = useRef<HTMLDivElement>(null);
@@ -36,7 +36,7 @@ const SplitButton = ({ label, onClick, itemsList, ...props }: SplitButtonProps) 
 
   return (
     <Box display="flex" gap="1px" position="relative" height={32}>
-      <StyledButton variant="contained" orientation="left" sx={{ maxHeight: 32 }} onClick={onClick} {...props}>
+      <StyledButton variant="contained" orientation="left" sx={{ maxHeight: 32 }} onClick={onClick}>
         <Typography
           color={theme.palette.text.onAction}
           variant="body2"
