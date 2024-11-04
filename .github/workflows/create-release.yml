@@ -12,9 +12,14 @@ on:
           - major
           - minor
           - patch
-      is_prerelease:
+      is_pre_release:
         type: boolean
-        description: 'Set to true to create a pre release'
+        description: 'Pre release'
+        required: true
+        default: false
+      is_draft:
+        type: boolean
+        description: 'Draft'
         required: true
         default: false
 
@@ -66,7 +71,7 @@ jobs:
           done
 
           # Append "-alpha" if is_draft is true
-          if [ "${{ github.event.inputs.is_prerelease }}" == "true" ]; then
+          if [ "${{ github.event.inputs.is_pre_release }}" == "true" ]; then
             new_version="${new_version}-alpha"
           fi
 
@@ -95,8 +100,8 @@ jobs:
         with:
           tag_name: '$new_version'
           release_name: 'Release $new_version'
-          draft: false
-          prerelease: ${{ github.event.inputs.is_prerelease }}
+          draft: ${{ github.event.inputs.is_draft }}
+          prerelease: ${{ github.event.inputs.is_pre_release }}
           body: 'Release for version $new_version'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
