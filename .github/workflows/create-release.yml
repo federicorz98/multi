@@ -54,12 +54,20 @@ jobs:
 
           # Construct the new version tag
           new_version="${major}.${minor}.${patch}"
-          echo "New version: $new_version"
+
+          # Check for existing tag and increment if necessary
+          while git rev-parse "refs/tags/release-$new_version" >/dev/null 2>&1; do
+            echo "Tag release-$new_version already exists. Incrementing patch version."
+            patch=$((patch + 1))
+            new_version="${major}.${minor}.${patch}"
+          done
 
           # Append "-alpha" if is_draft is true
           if [ "${{ github.event.inputs.is_prerelease }}" == "true" ]; then
             new_version="${new_version}-alpha"
           fi
+
+          echo "New version: $new_version"
 
           # Set the new version as an environment variable
           echo "new_version=$new_version" >> $GITHUB_ENV
@@ -71,7 +79,7 @@ jobs:
 
           # Commit and push the updated package.json
           git add package.json
-          git commit -m "chore: update package.json version to $new_version"
+          git commit -m "Release version to $new_version"
           git push origin main
 
       - name: Create Tag
