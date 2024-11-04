@@ -12,6 +12,5 @@ export type ToggleButtonProps<T extends string | number> = {
   defaultValue: T;
   size?: Size;
   fullWidth?: boolean;
-  setValue?: T;
   hideSelection?: boolean;
 } & Omit<MuiToggleButtonGroupProps, 'size'>;

@@ -17,7 +17,6 @@ export default function ToggleButton<T extends string | number>({
   defaultValue,
   size = 's',
   fullWidth,
-  setValue,
   hideSelection,
   onClick,
   disabled,
@@ -42,10 +41,6 @@ export default function ToggleButton<T extends string | number>({
       onSelect(newValue);
     }
   };
-
-  useEffect(() => {
-    setValue && setActualValue(setValue);
-  }, [setValue]);
 
   return (
     <StyledToggleButtonGroup
