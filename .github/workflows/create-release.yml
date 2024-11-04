@@ -4,9 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       release_type:
+        type: choice
         description: 'Release type to increment (major, minor, patch)'
         required: true
         default: 'patch'
+        options:
+          - major
+          - minor
+          - patch
       is_prerelease:
         type: boolean
         description: 'Set to true to create a pre release'
