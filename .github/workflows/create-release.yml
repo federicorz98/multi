@@ -37,8 +37,8 @@ jobs:
           # Fetch tags from the remote
           git fetch --tags
 
-          # Get the latest tag; if no tags, start from 0.0.0
-          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
+          # Get the latest tag; if no tags, start from 1.0.0
+          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "1.0.0")
           echo "Latest tag: $latest_tag"
 
           # Split the latest tag into major, minor, patch
