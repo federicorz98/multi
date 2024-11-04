@@ -10,7 +10,6 @@
     "build": "tsc",
     "eslint:check": "eslint .",
     "eslint:fix": "npm run eslint:check -- --fix",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "cd .. && husky",
     "prettier:check": "prettier --check \"{,*/**/}*.{md,json,yml,html,cjs,mjs,js,ts,tsx,css,scss}\"",
     "prettier:format": "prettier --write \"{,*/**/}*.{md,json,yml,html,cjs,mjs,js,ts,tsx,css,scss}\""

@@ -7,7 +7,6 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:storybook/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
   ],
   plugins: ['react', 'react-refresh', 'react-hooks', 'jsx-a11y', 'prettier'],
