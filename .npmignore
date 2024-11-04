@@ -9,7 +9,6 @@ lerna-debug.log*
 
 # Node modules and build files
 node_modules
-dist
 dist-ssr
 *.local
 
@@ -36,6 +35,13 @@ coverage
 *.test.tsx
 *.spec.tsx
 
-# srouce code
+# Source code
 src
 assets
+.github
+tsconfig.json
+.prettierrc
+.prettierignore
+.lintstagedrc.js
+.eslintrc.cjs
+.eslintignore
