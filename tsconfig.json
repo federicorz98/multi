@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2017",
     "module": "CommonJS",
     "jsx": "react-jsx",
     "strict": true,
@@ -10,6 +10,7 @@
     "declaration": true,
     "outDir": "./dist",
     "moduleResolution": "node",
+    "lib": ["ES2017", "dom"],
     "paths": {
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"],
