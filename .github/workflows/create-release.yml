@@ -17,11 +17,6 @@ on:
         description: 'Pre release'
         required: true
         default: false
-      is_draft:
-        type: boolean
-        description: 'Draft'
-        required: true
-        default: false
 
 jobs:
   create_release:
@@ -94,14 +89,3 @@ jobs:
         run: |
           git tag -a "$new_version" -m "Release $new_version"
           git push origin "$new_version"
-
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: '$new_version'
-          release_name: 'Release $new_version'
-          draft: ${{ github.event.inputs.is_draft }}
-          prerelease: ${{ github.event.inputs.is_pre_release }}
-          body: 'Release for version $new_version'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
