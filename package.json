@@ -10,7 +10,6 @@
     "build": "tsc",
     "eslint:check": "eslint .",
     "eslint:fix": "npm run eslint:check -- --fix",
-    "prepare": "cd .. && husky",
     "prettier:check": "prettier --check \"{,*/**/}*.{md,json,yml,html,cjs,mjs,js,ts,tsx,css,scss}\"",
     "prettier:format": "prettier --write \"{,*/**/}*.{md,json,yml,html,cjs,mjs,js,ts,tsx,css,scss}\""
   },
@@ -38,7 +37,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.11.0",
-    "husky": "9.0.11",
     "lint-staged": "^15.2.9",
     "prettier": "^3.2.5",
     "typescript": "^5.0.2"
