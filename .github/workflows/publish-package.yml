@@ -2,7 +2,7 @@ name: Publish Package 📦
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
@@ -28,7 +28,9 @@ jobs:
         with:
           node-version: 17
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
+      - name: Install dependencies and build
+        run: npm ci && npm run build
+      - name: publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,0 +1,7 @@
+multi:
+  - changed-files:
+    - any-glob-to-any-file: "src/**"
+
+repo-config:
+  - changed-files:
+    - any-glob-to-any-file: ".github/**"

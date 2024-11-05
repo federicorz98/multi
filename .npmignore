@@ -46,3 +46,5 @@ tsconfig.json
 .lintstagedrc.js
 .eslintrc.cjs
 .eslintignore
+tsup.config.ts
+yarn.lock
