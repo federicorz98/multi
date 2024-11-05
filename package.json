@@ -46,6 +46,9 @@
     "tsup": "^8.3.5",
     "typescript": "^5.0.2"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.24.4"
+  },
   "repository": "https://github.com/federicorz98/multi",
   "keywords": [],
   "author": "Estudio Gallo",
