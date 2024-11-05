@@ -2,9 +2,12 @@
   "name": "@federicorz98/multi",
   "version": "1.1.0",
   "description": "Estudio Gallo's components library for React applications, built on top of Material UI.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "exit 0",
     "build": "tsc",
@@ -43,6 +46,6 @@
   },
   "repository": "https://github.com/federicorz98/multi",
   "keywords": [],
-  "author": "",
+  "author": "Estudio Gallo",
   "license": "ISC"
 }
