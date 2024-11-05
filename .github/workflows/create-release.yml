@@ -5,7 +5,7 @@ on:
     inputs:
       release_type:
         type: choice
-        description: 'Release type to increment (major, minor, patch)'
+        description: 'Release type to increment <major.minor.patch>'
         required: true
         default: 'patch'
         options:
