@@ -12,6 +12,11 @@ on:
           - major
           - minor
           - patch
+      is_pre_release:
+        type: boolean
+        description: 'Pre release'
+        required: true
+        default: false
 
 jobs:
   create_release:
@@ -59,6 +64,11 @@ jobs:
             patch=$((patch + 1))
             new_version="${major}.${minor}.${patch}"
           done
+
+          # Append "-alpha" if is_draft is true
+          if [ "${{ github.event.inputs.is_pre_release }}" == "true" ]; then
+            new_version="${new_version}-alpha"
+          fi
 
           echo "New version: $new_version"
 
