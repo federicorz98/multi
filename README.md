@@ -15,31 +15,28 @@
 
 1.  Install the Package
 
-```
+```bash
 npm install @EstudioGallo/multi
 ```
 
 2.  Add the Inter font by inserting the following line in your HTML <head>:
 
-```diff
-+ <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+```html
+<link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
 ```
 
 3. In your main JavaScript or TypeScript file, import the styles
 
-```diff
-+ import "@EstudioGallo/multi/dist/index.css";
+```js
+import "@EstudioGallo/multi/dist/index.css";
 ```
 
 4. Replace the MUI `ThemeProvider` with the `MuiThemeProvider` from @EstudioGallo. Update your imports and components as follows:
 
-```diff
-- import { theme } from '@mui/material';
-- import { ThemeProvider } from '@mui/material/styles';
-+ import { MuiThemeProvider } from '@EstudioGallo/material/styles';
-- <ThemeProvider theme={theme}>
-+ <MuiThemeProvider>
+```js
+import { MultiThemeProvider } from "@EstudioGallo/multi";
+
+<MuiThemeProvider>
   {children}
-- </ThemeProvider>;
-+ </MuiThemeProvider>
+</MuiThemeProvider>
 ```
