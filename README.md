@@ -1,4 +1,4 @@
-<img src="./assets/multi-cover.png" alt="Multi cover" >
+<img src="https://storage.googleapis.com/fermi-static-public-i602vo3ia2xahyxjwfue/multi-repo-cover.png" alt="Multi cover" >
 
 [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/design/utT32w0P6SLGau5Hub6xzo/Multi---Design-System?node-id=0-1&node-type=canvas&t=5o2ZW8hufmY7Ekps-0)
 [![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)

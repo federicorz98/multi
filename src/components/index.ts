@@ -28,8 +28,8 @@ export type { ToggleButtonProps } from './buttons/toggle-button/ToggleButton.pro
 // Spinner
 export { default as Spinner } from './spinner/Spinner';
 
-// Spinner
-export { default as ThemeProvider } from './theme-provider/ThemeProvider';
+// ThemeProvider
+export { default as MultiThemeProvider } from './theme-provider/ThemeProvider';
 
 // Tooltip
 export { default as Tooltip } from './tooltip/Tooltip';
