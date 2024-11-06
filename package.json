@@ -1,6 +1,6 @@
 {
   "name": "@federicorz98/multi",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Estudio Gallo's components library for React applications, built on top of Material UI.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
