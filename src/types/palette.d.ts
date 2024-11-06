@@ -71,27 +71,53 @@ type datagrids = {
   surface: {
     header: {
       main: string;
+      dark: string;
       sell: string;
+      sellDark: string;
       buy: string;
+      buyDark: string;
     };
     cell: {
       sell: string;
       sellHover: string;
+      sellDark: string;
+      sellDarkHover: string;
+      buy: string;
+      buyDark: string;
+      buyHover: string;
+      buyDarkHover: string;
       sellUp: string;
       sellUpHover: string;
+      sellUpDark: string;
+      sellUpDarkHover: string;
       sellDown: string;
       sellDownHover: string;
-      buy: string;
-      buyHover: string;
+      sellDownDark: string;
+      sellDownDarkHover: string;
       buyUp: string;
       buyUpHover: string;
+      buyUpDark: string;
+      buyUpDarkHover: string;
       buyDown: string;
       buyDownHover: string;
+      buyDownDark: string;
+      buyDownDarkHover: string;
     };
   };
 };
 
 declare module '@mui/material/styles' {
+  interface BasePalette {
+    error: ColorVariants;
+    grey: ReturnType<typeof generateGreyTints>;
+    neutrals: Neutrals;
+    primary: ReturnType<typeof generatePrimary>;
+    special: ReturnType<typeof generateSpecial>;
+    success: ColorVariants;
+    transparent: ReturnType<typeof generateTransparent>;
+    warning: ColorVariants;
+  }
+
   interface Palette {
     special: {
       primary: {
@@ -188,11 +214,14 @@ declare module '@mui/material/styles' {
   }
 
   interface PaletteColor {
+    lightest: string;
+    soft: string;
+    xxLight: string;
+    xLight: string;
+    lightPastel: string;
     lighter: string;
-    light: string;
-    main: string;
-    dark: string;
     darker: string;
+    darkest: string;
     alpha: {
       12: string;
       20: string;

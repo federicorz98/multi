@@ -1,11 +1,11 @@
 import { PaletteOptions } from '@mui/material';
-import { palette } from './palette';
+import { BasePalette } from '@mui/material/styles';
 
 /**
  * Related to light mapped brand's palette.
  * @see [Figma]{@link https://www.figma.com/design/utT32w0P6SLGau5Hub6xzo/Multi---Design-System?node-id=11977-11742&t=AyPzyXm06VIK4TgC-4}
  */
-export const lightBasePalette: PaletteOptions = {
+export const getLightBasePalette = (palette: BasePalette): PaletteOptions => ({
   ...palette,
   mode: 'light',
   surface: {
@@ -147,4 +147,4 @@ export const lightBasePalette: PaletteOptions = {
       },
     },
   },
-};
+});

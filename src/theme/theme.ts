@@ -1,25 +1,14 @@
 import { Theme } from '@mui/material';
 import { createCustomTheme } from './theme.util';
-import { lightBasePalette } from './palette/palette.light';
-import { darkBasePalette } from './palette/palette.dark';
-
-const defaultTheme = createCustomTheme(lightBasePalette);
-
-const darkTheme = createCustomTheme(darkBasePalette);
+import { ColorScheme } from './palette/config';
+import { getLightBasePalette } from './palette/palette.light';
+import { generatePalette } from './palette/palette';
+import { getDarkBasePalette } from './palette/palette.dark';
 
 export type ThemeOptions = 'dark' | 'light';
 
-export const getTheme = (mode: ThemeOptions): Theme => {
-  return mode === 'dark' ? darkTheme : defaultTheme;
+export const getTheme = (isDarkMode: boolean, colorSchema?: ColorScheme): Theme => {
+  const palette = generatePalette(colorSchema);
+  const adjustedPalette = isDarkMode ? getDarkBasePalette(palette) : getLightBasePalette(palette);
+  return createCustomTheme(adjustedPalette, palette);
 };
-
-export const getDarkTheme = (): Theme => {
-  return darkTheme;
-};
-
-export const getDefaultTheme = (): Theme => {
-  return defaultTheme;
-};
-
-export { defaultTheme, darkTheme };
-export default defaultTheme;

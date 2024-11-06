@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PaletteOptions, createTheme } from '@mui/material';
-import { palette } from './palette/palette';
 import { spacing } from './spacing';
 import { typography } from './typography';
 
 /**
  * Create a custom theme based on a palette
  * @param customPalette (dark/light)
+ * @param basePalette primitive color tokens
  * @returns Theme
  */
-export const createCustomTheme = (customPalette: PaletteOptions) =>
+export const createCustomTheme = (customPalette: PaletteOptions, basePalette: any) =>
   createTheme({
     palette: customPalette,
     spacing: (factor: number) => {
@@ -126,7 +127,7 @@ export const createCustomTheme = (customPalette: PaletteOptions) =>
             props: { variant: 'successOutlined' },
             style: {
               border: `1px solid ${customPalette.surface.success.main}`,
-              backgroundColor: palette.neutrals.white,
+              backgroundColor: basePalette.neutrals.white,
               color: customPalette.text?.success?.main,
             },
           },
@@ -143,14 +144,14 @@ export const createCustomTheme = (customPalette: PaletteOptions) =>
             style: {
               border: `1px solid ${customPalette.surface.error.status}`,
               backgroundColor: customPalette.surface.error.main,
-              color: palette.neutrals.white,
+              color: basePalette.neutrals.white,
             },
           },
           {
             props: { variant: 'rejectedOutlined' },
             style: {
               border: `1px solid ${customPalette.border.error}`,
-              backgroundColor: palette.neutrals.white,
+              backgroundColor: basePalette.neutrals.white,
               color: customPalette.text?.error?.main,
             },
           },
@@ -167,15 +168,15 @@ export const createCustomTheme = (customPalette: PaletteOptions) =>
             style: {
               border: `1px solid ${customPalette.surface.warning.status}`,
               backgroundColor: customPalette.surface.warning.status,
-              color: palette.neutrals.white,
+              color: basePalette.neutrals.white,
             },
           },
           {
             props: { variant: 'pendingOutlined' },
             style: {
               border: `1px solid ${customPalette.surface.warning.status}`,
-              backgroundColor: palette.neutrals.white,
-              color: palette.neutrals.white,
+              backgroundColor: basePalette.neutrals.white,
+              color: basePalette.neutrals.white,
             },
           },
           {
@@ -188,17 +189,17 @@ export const createCustomTheme = (customPalette: PaletteOptions) =>
           {
             props: { variant: 'default' },
             style: {
-              border: `1px solid ${palette.primary.main}`,
-              backgroundColor: palette.primary.main,
-              color: palette.neutrals.white,
+              border: `1px solid ${basePalette.primary.main}`,
+              backgroundColor: basePalette.primary.main,
+              color: basePalette.neutrals.white,
             },
           },
           {
             props: { variant: 'defaultOutlined' },
             style: {
-              border: `1px solid ${palette.primary.dark}`,
-              backgroundColor: palette.neutrals.white,
-              color: palette.primary.dark,
+              border: `1px solid ${basePalette.primary.dark}`,
+              backgroundColor: basePalette.neutrals.white,
+              color: basePalette.primary.dark,
             },
           },
           {

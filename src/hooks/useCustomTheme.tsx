@@ -1,6 +1,7 @@
 import { useMediaQuery } from '@mui/material';
 import { useState } from 'react';
-import { getDarkTheme, getDefaultTheme } from '@theme/theme';
+import { getTheme, ThemeOptions } from '@theme/theme';
+import { ColorScheme } from '@theme/palette/config';
 
 function useCustomTheme() {
   const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
@@ -18,7 +19,17 @@ function useCustomTheme() {
     setDarkMode(localStorage.getItem('appTheme') === 'dark');
   });
 
-  return { getTheme: () => (darkMode ? getDarkTheme() : getDefaultTheme()), isDarkMode: darkMode };
+  const changeThemeMode = (mode: ThemeOptions) => {
+    const isDarkMode = mode === 'dark';
+    setDarkMode(isDarkMode);
+    localStorage.setItem('appTheme', isDarkMode ? 'dark' : 'light');
+  };
+
+  return {
+    getTheme: (colorSchema?: ColorScheme) => getTheme(darkMode, colorSchema),
+    isDarkMode: darkMode,
+    changeThemeMode,
+  };
 }
 
 export default useCustomTheme;
