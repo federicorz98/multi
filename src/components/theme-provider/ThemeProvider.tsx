@@ -1,5 +1,5 @@
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
-import useCustomTheme from '@hooks/useCustomTheme';
+import useMultiTheme from '@hooks/useMultiTheme';
 import { MultiThemeProviderProps } from './ThemeProvider.props';
 import { GALLO_CONFIG } from '@theme/palette/config';
 import { useMemo } from 'react';
@@ -8,7 +8,7 @@ import { useMemo } from 'react';
  * @see {@link https://mui.com/material-ui/customization/theming/#theme-provider}
  */
 const MultiThemeProvider = ({ children, colorSchema = GALLO_CONFIG, theme, ...props }: MultiThemeProviderProps) => {
-  const { getTheme, isDarkMode } = useCustomTheme();
+  const { getTheme, isDarkMode } = useMultiTheme();
 
   const configuredTheme = useMemo(() => {
     if (theme) {

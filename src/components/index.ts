@@ -30,6 +30,7 @@ export { default as Spinner } from './spinner/Spinner';
 
 // ThemeProvider
 export { default as MultiThemeProvider } from './theme-provider/ThemeProvider';
+export type { MultiThemeProviderProps } from './theme-provider/ThemeProvider.props';
 
 // Tooltip
 export { default as Tooltip } from './tooltip/Tooltip';

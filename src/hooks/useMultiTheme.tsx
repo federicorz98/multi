@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { getTheme, ThemeOptions } from '@theme/theme';
 import { ColorScheme } from '@theme/palette/config';
 
-function useCustomTheme() {
+function useMultiTheme() {
   const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
   const isDefaultDark = localStorage.getItem('appTheme') ? localStorage.getItem('appTheme') === 'dark' : systemTheme;
   const [darkMode, setDarkMode] = useState<boolean>(isDefaultDark);
@@ -32,4 +32,4 @@ function useCustomTheme() {
   };
 }
 
-export default useCustomTheme;
+export default useMultiTheme;
