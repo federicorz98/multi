@@ -2,26 +2,44 @@ import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import useMultiTheme from '@hooks/useMultiTheme';
 import { MultiThemeProviderProps } from './ThemeProvider.props';
 import { GALLO_CONFIG } from '@theme/palette/config';
-import { useMemo } from 'react';
+import { useState } from 'react';
+import { CssBaseline, useMediaQuery } from '@mui/material';
+import { ThemeOptions } from '@theme/theme';
+import { DarkModeContext } from './DarkModeContext';
+
+// this component is required to use `useMultiTheme` hook inside the context
+const ThemeProvider = ({ children, colorSchema = GALLO_CONFIG, ...props }: MultiThemeProviderProps) => {
+  const { getCurrentTheme } = useMultiTheme();
+
+  return (
+    <MuiThemeProvider theme={getCurrentTheme(colorSchema)} {...props}>
+      <CssBaseline />
+      {children}
+    </MuiThemeProvider>
+  );
+};
 
 /**
  * @see {@link https://mui.com/material-ui/customization/theming/#theme-provider}
  */
-const MultiThemeProvider = ({ children, colorSchema = GALLO_CONFIG, theme, ...props }: MultiThemeProviderProps) => {
-  const { getTheme, isDarkMode } = useMultiTheme();
+const MultiThemeProvider = ({ children, colorSchema = GALLO_CONFIG, ...props }: MultiThemeProviderProps) => {
+  const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
+  const storedTheme = localStorage.getItem('appTheme') as ThemeOptions | null;
+  const isDefaultDark = storedTheme ? storedTheme === 'dark' : systemTheme;
 
-  const configuredTheme = useMemo(() => {
-    if (theme) {
-      return theme;
-    }
-
-    return getTheme(colorSchema);
-  }, [colorSchema, theme, isDarkMode]);
+  const [isDarkMode, setDarkMode] = useState(isDefaultDark);
 
   return (
-    <MuiThemeProvider theme={configuredTheme} {...props}>
-      {children}
-    </MuiThemeProvider>
+    <DarkModeContext.Provider
+      value={{
+        isDarkMode,
+        setDarkMode,
+      }}
+    >
+      <ThemeProvider colorSchema={colorSchema} {...props}>
+        {children}
+      </ThemeProvider>
+    </DarkModeContext.Provider>
   );
 };
 

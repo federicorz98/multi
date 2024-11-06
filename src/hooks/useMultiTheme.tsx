@@ -1,23 +1,16 @@
-import { useMediaQuery } from '@mui/material';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { getTheme, ThemeOptions } from '@theme/theme';
 import { ColorScheme } from '@theme/palette/config';
+import { DarkModeContext } from '@components/theme-provider/DarkModeContext';
 
 function useMultiTheme() {
-  const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
-  const isDefaultDark = localStorage.getItem('appTheme') ? localStorage.getItem('appTheme') === 'dark' : systemTheme;
-  const [darkMode, setDarkMode] = useState<boolean>(isDefaultDark);
+  const context = useContext(DarkModeContext);
 
-  const appTheme = localStorage.getItem('appTheme');
-
-  if (!appTheme) {
-    localStorage.setItem('appTheme', darkMode ? 'dark' : 'light');
+  if (!context) {
+    throw new Error('Missing DarkModeContext, check if the MultiThemeProvider is used to wrap the App.');
   }
 
-  // TODO: Implement local storage hook. https://usehooks-ts.com/react-hook/use-local-storage
-  window.addEventListener('appTheme', () => {
-    setDarkMode(localStorage.getItem('appTheme') === 'dark');
-  });
+  const { isDarkMode, setDarkMode } = context;
 
   const changeThemeMode = (mode: ThemeOptions) => {
     const isDarkMode = mode === 'dark';
@@ -25,10 +18,19 @@ function useMultiTheme() {
     localStorage.setItem('appTheme', isDarkMode ? 'dark' : 'light');
   };
 
+  const toggleThemeMode = () => {
+    changeThemeMode(isDarkMode ? 'light' : 'dark');
+  };
+
+  const getCurrentTheme = (colorSchema: ColorScheme) => {
+    return getTheme(isDarkMode ?? false, colorSchema);
+  };
+
   return {
-    getTheme: (colorSchema?: ColorScheme) => getTheme(darkMode, colorSchema),
-    isDarkMode: darkMode,
+    getCurrentTheme,
     changeThemeMode,
+    toggleThemeMode,
+    isDarkMode,
   };
 }
 
