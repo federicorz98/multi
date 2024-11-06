@@ -25,8 +25,34 @@ export type { SplitButtonProps } from './buttons/split-button/SplitButton.props'
 export { default as ToggleButton } from './buttons/toggle-button/ToggleButton';
 export type { ToggleButtonProps } from './buttons/toggle-button/ToggleButton.props';
 
+// Checkbox
+export { default as Checkbox } from './checkbox/Checkbox';
+export { CheckboxProps } from './checkbox/Checkbox.props';
+
+// DatePicker
+export { default as DatePicker } from './date-picker/DatePicker';
+export { DatePickerProps } from './date-picker/DatePicker.props';
+
+// Inputs
+export { default as CurrencyInput } from './inputs/currency-input/CurrencyInput';
+export { CurrencyInputProps } from './inputs/currency-input/CurrencyInput.props';
+
+export { default as NumberInput } from './inputs/number-input/NumberInput';
+export { NumberInputProps } from './inputs/number-input/NumberInput.props';
+
+export { default as OtpInput } from './inputs/otp-input/OtpInput';
+export { OtpInputProps } from './inputs/otp-input/OtpInput.props';
+
+export { default as PasswordInput } from './inputs/password-input/PasswordInput';
+
+export { default as TextInput } from './inputs/text-input/TextInput';
+export { TextInputProps } from './inputs/text-input/TextInput.props';
+
 // Spinner
 export { default as Spinner } from './spinner/Spinner';
+
+// Tabs
+export { default as Tabs } from './tabs/Tabs';
 
 // ThemeProvider
 export { default as MultiThemeProvider } from './theme-provider/ThemeProvider';

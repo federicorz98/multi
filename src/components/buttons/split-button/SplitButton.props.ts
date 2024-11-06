@@ -6,6 +6,6 @@ import { ButtonProps as MuiButtonProps } from '@mui/material';
  * @see {@link https://mui.com/material-ui/api/button/#props}
  * */
 export type SplitButtonProps = {
-  label: string;
+  label: React.ReactNode;
   itemsList: { label: string; onClick: () => void }[];
 } & MuiButtonProps;

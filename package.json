@@ -30,9 +30,14 @@
   "devDependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@mui/x-charts": "^7.15.0",
+    "@mui/x-data-grid-pro": "^7.15.0",
+    "@mui/x-date-pickers": "^7.15.0",
+    "@mui/x-license-pro": "^6.10.2",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "date-fns": "^2.30.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -43,6 +48,7 @@
     "eslint-plugin-storybook": "^0.11.0",
     "lint-staged": "^15.2.9",
     "prettier": "^3.2.5",
+    "react-number-format": "^5.3.1",
     "tsup": "^8.3.5",
     "typescript": "^5.0.2"
   },

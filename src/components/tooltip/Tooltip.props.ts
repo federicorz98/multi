@@ -7,8 +7,8 @@ import React from 'react';
  * @see {@link https://mui.com/material-ui/api/tooltip/#props}
  * */
 export type TooltipProps = {
-  title?: string;
-  text?: string;
+  title?: React.ReactNode;
+  text?: React.ReactNode;
   size?: 'sm' | 'md';
   maxWidth?: number;
   textAlign?: 'left' | 'center' | 'right';

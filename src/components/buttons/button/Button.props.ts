@@ -5,10 +5,10 @@ import { ReactElement } from 'react';
 /**
  * Define props for CustomButton component
  * @extends MuiButtonProps
- * @see {@link https://mui.com/material-ui/api/button/#props}
+ * @see {@link https://mui.com/material-ui/api/button/#props} MUI Documentation
  * */
 export type ButtonProps = {
-  label: string;
+  label: React.ReactNode;
   isLoading?: boolean;
   loadingText?: string;
   iconLeft?: ReactElement<IconProps>;
