@@ -11,4 +11,4 @@ export type AccordionProps = {
   setExpanded: React.Dispatch<React.SetStateAction<string[]>>;
   hideBorderDetail?: boolean | false;
   hideBorderAccordion?: boolean | false;
-} & Omit<MuiAccordionProps, 'expand' | 'onChange'>;
+} & Omit<MuiAccordionProps, 'expanded' | 'onChange'>;

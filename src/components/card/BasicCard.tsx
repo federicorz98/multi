@@ -54,6 +54,7 @@ export default function BasicCard({
                 backgroundColor: palette.surface.onAction.secondary,
               },
             }}
+            toolTipText={linkTo}
             fullWidth
           >
             {footerText}

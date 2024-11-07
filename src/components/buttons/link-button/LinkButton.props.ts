@@ -8,7 +8,7 @@ import { IconProps } from '@phosphor-icons/react';
  * */
 export type LinkButtonProps = {
   url: string;
-  toolTipText?: React.ReactNode;
+  toolTipText: React.ReactNode;
   newTab?: boolean;
   iconProps?: IconProps;
 } & MuiIconButtonProps;
