@@ -1,14 +1,9 @@
 import Card from '@mui/material/Card';
-import { SxProps, styled, Button, useTheme, Stack } from '@mui/material';
-import CardFooter from './CardFooter';
-import LinkButton from '@components/buttons/link-button/LinkButton';
+import { SxProps, styled, Stack } from '@mui/material';
 
 interface BasicCardProps {
   buttonSize?: 'small' | 'medium' | 'large';
   children: React.ReactNode;
-  footerText?: React.ReactNode;
-  linkTo?: string;
-  action?: () => void;
   height?: string | number;
   sx?: SxProps;
 }
@@ -24,60 +19,18 @@ interface BasicCardProps {
  *    <CardContent>
  *        {children}
  *    </CardContent>
+ *    <CardFooter>
+ *        {footer}
+ *    </CardFooter>
  * </BasicCard>
  * ```
  */
-export default function BasicCard({
-  children,
-  footerText = '',
-  height = '100%',
-  linkTo,
-  action,
-  sx,
-  buttonSize = 'small',
-}: BasicCardProps) {
-  const { palette } = useTheme();
-
+export default function BasicCard({ children, height = '100%', sx }: BasicCardProps) {
   return (
     <StyledCard style={{ height }} sx={sx}>
       <Stack flex={1} bgcolor="surface.container.level1">
         {children}
       </Stack>
-      {linkTo ? (
-        <CardFooter>
-          <LinkButton
-            url={linkTo}
-            size={buttonSize}
-            newTab={false}
-            sx={{
-              ':hover': {
-                backgroundColor: palette.surface.onAction.secondary,
-              },
-            }}
-            toolTipText={linkTo}
-            fullWidth
-          >
-            {footerText}
-          </LinkButton>
-        </CardFooter>
-      ) : action ? (
-        <CardFooter>
-          <Button
-            size={buttonSize}
-            onClick={action}
-            sx={{
-              ':hover': {
-                backgroundColor: palette.surface.onAction.secondary,
-              },
-            }}
-            fullWidth
-          >
-            {footerText}
-          </Button>
-        </CardFooter>
-      ) : (
-        footerText
-      )}
     </StyledCard>
   );
 }
