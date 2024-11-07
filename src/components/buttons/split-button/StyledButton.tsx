@@ -1,12 +1,11 @@
-import { Button, List } from '@mui/material';
-import { styled } from '@mui/system';
+import { Button, List, styled } from '@mui/material';
 
 type StyledButtonProps = {
   orientation?: string;
 };
 
 export const StyledButton = styled(Button)<StyledButtonProps>(({ theme, orientation }) => ({
-  color: theme.palette.text?.onAction,
+  color: theme.palette.text.onAction,
   backgroundColor: theme.palette.surface.action,
   borderRadius: theme.spacing(3),
   border: 'none',
@@ -21,7 +20,7 @@ export const StyledButton = styled(Button)<StyledButtonProps>(({ theme, orientat
 
   '&:hover': {
     backgroundColor: theme.palette.surface.actionHover,
-    color: theme.palette.text?.onAction,
+    color: theme.palette.text.onAction,
     border: 'none',
   },
 }));
