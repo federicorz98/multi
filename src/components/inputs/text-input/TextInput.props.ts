@@ -9,4 +9,5 @@ export type TextInputProps = {
   startIcon?: React.ReactNode;
   error?: string | boolean;
   disabled?: boolean;
-} & Omit<MuiTextFieldProps, 'error'>;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+} & Omit<MuiTextFieldProps, 'error' | 'onChange'>;

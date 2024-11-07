@@ -105,7 +105,7 @@ export default function OtpInput({ separator, length, value, error, onChange }: 
   };
 
   return (
-    <Stack direction="column" gap={0}>
+    <Stack direction="column" gap={0} display="contents">
       <Stack direction="row" gap={3} width="100%" height="68px" alignItems="center">
         {new Array(length).fill(null).map((_, index) => (
           <React.Fragment key={index}>
