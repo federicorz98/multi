@@ -47,6 +47,10 @@ export { DatePickerProps } from './date-picker/DatePicker.props';
 export { default as Dialog } from './dialog/Dialog';
 export { DialogProps } from './dialog/Dialog.props';
 
+// Drawer
+export { default as Drawer } from './drawer/Drawer';
+export { DrawerProps } from './drawer/Drawer.props';
+
 // Inputs
 export { default as CurrencyInput } from './inputs/currency-input/CurrencyInput';
 export { CurrencyInputProps } from './inputs/currency-input/CurrencyInput.props';
