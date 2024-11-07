@@ -7,8 +7,8 @@ import { IconProps } from '@phosphor-icons/react';
  * @see {@link https://mui.com/material-ui/api/icon-button/#props}
  * */
 export type LinkButtonProps = {
-  toolTipText: React.ReactNode;
   url: string;
+  toolTipText?: React.ReactNode;
   newTab?: boolean;
   iconProps?: IconProps;
 } & MuiIconButtonProps;
