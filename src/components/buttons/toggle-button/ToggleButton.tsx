@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButtonGroup, { ToggleButtonGroupProps } from '@mui/material/ToggleButtonGroup';
 import { styled, ToggleButton as MuiToggleButton, useTheme } from '@mui/material';
-import { ToggleButtonProps } from './ToggleButton.props';
+import { Size, ToggleButtonProps } from './ToggleButton.props';
 import { isRichOptions } from '@models/options.model';
 import { spacing } from '@theme/spacing';
 
@@ -101,7 +101,9 @@ export default function ToggleButton<T extends string | number>({
   );
 }
 
-const StyledToggleButtonGroup = styled(ToggleButtonGroup)<{ customSize?: string }>(({ theme, customSize }) => ({
+const StyledToggleButtonGroup = styled(({ customSize, ...props }: { customSize: Size } & ToggleButtonGroupProps) => (
+  <ToggleButtonGroup {...props} />
+))<{ customSize?: string }>(({ theme, customSize }) => ({
   backgroundColor: theme.palette.surface.container.level1,
   border: `1px solid ${theme.palette.border.default}`,
   padding: 3,
