@@ -7,12 +7,12 @@ import { TextInputProps } from './TextInput.props';
  * @see {@link https://www.figma.com/design/utT32w0P6SLGau5Hub6xzo/Multi---Design-System?node-id=8310-33935&t=vn3jt8asu9tEdG4o-4} Figma Component
  * @since 1.0.0
  *  */
-export function TextInput({ startIcon, error, helperText, type, disabled = false, value, onChange, ...rest }: TextInputProps) {
+export function TextInput({ error, helperText, type, disabled = false, value, onChange, ...rest }: TextInputProps) {
   return (
     <StyledTextInput
       size="small"
       autoComplete="off"
-      type="text"
+      type={type ?? 'text'}
       error={typeof error === 'boolean' ? error : error !== undefined}
       helperText={helperText && !error ? helperText : typeof error === 'string' ? error : undefined}
       disabled={disabled}

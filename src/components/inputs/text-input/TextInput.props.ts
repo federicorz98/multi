@@ -6,7 +6,6 @@ import { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
  * @see {@link https://mui.com/material-ui/api/text-field/#props} MUI Documentation
  * */
 export type TextInputProps = {
-  startIcon?: React.ReactNode;
   error?: string | boolean;
   disabled?: boolean;
   onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;

@@ -51,7 +51,15 @@ const Select = <T extends string | number>({
         size="small"
         popupIcon={<CaretDown size={16} color={theme.palette.icon.default.main} />}
         options={options}
-        renderInput={(params) => <TextInput {...params} label={label} />}
+        renderInput={(params) => (
+          <TextInput
+            onChange={() => {
+              // Ignore
+            }}
+            {...params}
+            label={label}
+          />
+        )}
         renderOption={(props, option) => (
           <MenuItem
             {...props}

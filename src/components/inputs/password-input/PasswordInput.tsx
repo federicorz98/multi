@@ -36,13 +36,13 @@ function PasswordAdornment({
  * Styled Password input
  * @since 1.0.0
  * */
-function PasswordInput({ startIcon, error, helperText, type, disabled = false, value, ...rest }: TextInputProps) {
+function PasswordInput({ disabled = false, ...rest }: TextInputProps) {
   const [showPassword, setShowPassword] = useState(true);
 
   return (
     <TextInput
-      type="password"
-      inputProps={{
+      type={showPassword ? 'text' : 'password'}
+      InputProps={{
         endAdornment: (
           <PasswordAdornment
             showPassword={showPassword}
