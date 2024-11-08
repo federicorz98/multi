@@ -3,12 +3,12 @@ import {
   AccordionProps as MuiAccordionProps,
   styled,
   AccordionDetails,
-  AccordionSummary,
-  IconButton,
+  AccordionSummary as MuiAccordionSummary,
   Typography,
   useTheme,
+  AccordionSummaryProps,
 } from '@mui/material';
-import { CaretDown, CaretRight } from '@phosphor-icons/react';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AccordionProps } from './Accordion.props';
 
 /**
@@ -22,22 +22,11 @@ const Accordion = ({ title, expanded, children, hideBorderDetail, hideBorderAcco
 
   return (
     <StyledAccordion sx={{ borderBottom: hideBorderAccordion ? 'none' : '' }} {...props}>
-      <AccordionSummary>
-        <IconButton
-          aria-label="expand row"
-          size="small"
-          sx={{
-            color: theme.palette.icon.action.main,
-            marginRight: theme.spacing(4),
-            padding: 0,
-          }}
-        >
-          {expanded ? <CaretDown size={18} /> : <CaretRight size={18} />}
-        </IconButton>
+      <StyledAccordionSummary>
         <Typography variant="h5" color={theme.palette.text.action}>
           {title}
         </Typography>
-      </AccordionSummary>
+      </StyledAccordionSummary>
       <AccordionDetails
         sx={{
           borderBottom: hideBorderDetail
@@ -69,5 +58,26 @@ const StyledAccordion = styled((props: MuiAccordionProps) => <MuiAccordion disab
     },
   })
 );
+
+const StyledAccordionSummary = styled((props: AccordionSummaryProps) => (
+  <MuiAccordionSummary
+    expandIcon={
+      <ExpandMoreIcon
+        sx={(theme) => ({
+          color: theme.palette.icon.action.main,
+        })}
+      />
+    }
+    {...props}
+  />
+))(({ theme }) => ({
+  flexDirection: 'row-reverse',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(-90deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(3),
+  },
+}));
 
 export default Accordion;
