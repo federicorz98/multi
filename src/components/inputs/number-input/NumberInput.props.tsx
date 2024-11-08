@@ -18,4 +18,5 @@ export type NumberInputProps = {
   showStatusIcon?: boolean;
   onPlus?: () => void;
   onMinus?: () => void;
-} & Omit<MuiTextFieldProps, 'error'>;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+} & Omit<MuiTextFieldProps, 'error' | 'onChange'>;
