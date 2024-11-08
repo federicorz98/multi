@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@federicorz98/multi": "file:",
+    "@mui/icons-material": "^6.1.6",
     "@mui/material": "^6.0.2",
     "@phosphor-icons/react": "^2.1.6",
     "react": "^18.3.1",
