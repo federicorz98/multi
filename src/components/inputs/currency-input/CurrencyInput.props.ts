@@ -12,4 +12,5 @@ export type CurrencyInputProps = {
   defaultValue?: number;
   decimals?: number;
   handleChangeError?: (error: boolean) => void;
-} & Omit<MuiTextFieldProps, 'error'>;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+} & Omit<MuiTextFieldProps, 'error' | 'onChange'>;
