@@ -58,6 +58,13 @@ export { DialogProps } from './dialog/Dialog.props';
 export { default as Drawer } from './drawer/Drawer';
 export { DrawerProps } from './drawer/Drawer.props';
 
+// Footer
+export { default as Footer } from './footer/Footer';
+export { FooterProps } from './footer/Footer.props';
+
+// Header
+export { default as Header } from './header/Header';
+
 // Inputs
 export { default as CurrencyInput } from './inputs/currency-input/CurrencyInput';
 export { CurrencyInputProps } from './inputs/currency-input/CurrencyInput.props';
