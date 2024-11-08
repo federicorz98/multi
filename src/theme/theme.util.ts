@@ -96,7 +96,7 @@ export const createCustomTheme = (customPalette: PaletteOptions, basePalette: an
           {
             props: { severity: 'success' },
             style: {
-              backgroundColor: customPalette.surface.info.main,
+              backgroundColor: customPalette.surface.success.main,
             },
           },
         ],
