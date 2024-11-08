@@ -2,6 +2,13 @@
 export { default as Accordion } from './accordion/Accordion';
 export type { AccordionProps } from './accordion/Accordion.props';
 
+// Alert
+export { default as Alert } from './alert/Alert';
+export type { AlertProps } from './alert/Alert.props';
+
+// Badge
+export { default as Badge } from './badge/Badge';
+
 // Buttons
 export { default as Button } from './buttons/button/Button';
 export type { ButtonProps } from './buttons/button/Button.props';

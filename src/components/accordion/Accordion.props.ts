@@ -6,9 +6,7 @@ import { AccordionProps as MuiAccordionProps } from '@mui/material';
  * @see {@link https://mui.com/material-ui/api/accordion/#props} MUI Documentation
  * */
 export type AccordionProps = {
-  tag: string;
-  expanded: string[];
-  setExpanded: React.Dispatch<React.SetStateAction<string[]>>;
+  title: string;
   hideBorderDetail?: boolean | false;
   hideBorderAccordion?: boolean | false;
-} & Omit<MuiAccordionProps, 'expanded' | 'onChange'>;
+} & MuiAccordionProps;

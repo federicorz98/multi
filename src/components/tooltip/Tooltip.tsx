@@ -2,6 +2,12 @@ import { Tooltip as MuiTooltip, Stack, Typography, useTheme } from '@mui/materia
 import { Info } from '@phosphor-icons/react';
 import { TooltipProps } from './Tooltip.props';
 
+/**
+ * Styled MUI Tooltip
+ * @see {@link https://mui.com/material-ui/react-tooltip/} MUI Documentation
+ * @see {@link https://www.figma.com/design/utT32w0P6SLGau5Hub6xzo/Multi---Design-System?node-id=2419-5514&t=AtV1GPEnzD187re8-4} Figma Component
+ * @since 1.0.0
+ *  */
 const Tooltip = ({ title, text, size = 'sm', maxWidth = 230, textAlign, infoIconStyle, ...rest }: TooltipProps) => {
   const { palette } = useTheme();
 
