@@ -93,6 +93,12 @@ export const createCustomTheme = (customPalette: PaletteOptions, basePalette: an
               backgroundColor: customPalette.surface.info.main,
             },
           },
+          {
+            props: { severity: 'success' },
+            style: {
+              backgroundColor: customPalette.surface.info.main,
+            },
+          },
         ],
       },
       MuiChip: {
