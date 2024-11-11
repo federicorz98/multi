@@ -17,7 +17,7 @@
 1.  Install the Package:
 
 ```bash
-npm install @EstudioGallo/multi
+npm install @estudiogallo/multi@1.0.0
 ```
 
 2.  Add the Inter font by inserting the following line in your HTML `<head>`:

@@ -75,6 +75,11 @@ jobs:
           # Set the new version as an environment variable
           echo "new_version=$new_version" >> $GITHUB_ENV
 
+      - name: Update README.md with new version
+        run: |
+          # Define the pattern and replacement text
+          sed -i "s/@estudiogallo\/multi@[0-9]*\.[0-9]*\.[0-9]*/@estudiogallo\/multi@$new_version/" README.md
+
       - name: Update package.json version
         run: |
           # Use jq to update the version field in package.json
