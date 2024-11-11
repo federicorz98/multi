@@ -16,7 +16,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@models/*": ["./src/models/*"],
       "@theme/*": ["./src/theme/*"],
-      "@types/*": ["./src/types/*"]
+      "@types/*": ["./src/types/*"],
+      "@util/*": ["./src/util/*"]
     }
   },
   "include": ["src/**/*"],

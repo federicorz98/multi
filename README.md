@@ -9,7 +9,6 @@
 ## Prerequisites
 
 - [MUI](https://mui.com/versions/) 6 or greater
-- [MUI X](https://mui.com/x/introduction/licensing/) license
 - [Github package installation prerequisites](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)
 
 ## Setup Instructions
@@ -32,10 +31,18 @@ npm install @estudiogallo/multi@1.0.0
 import '@EstudioGallo/multi/dist/index.css';
 ```
 
-4. Replace the MUI `ThemeProvider` with the `MuiThemeProvider` from @EstudioGallo. Update your imports and components as follows:
+4. Init MUI license [1^]. You must call the `initLicenseKey()` function before React renders the first component in your app:
+
+```js
+initLicenseKey();
+```
+
+5. Replace the MUI `ThemeProvider` with the `MuiThemeProvider` from @EstudioGallo. Update your imports and components as follows:
 
 ```js
 import { MultiThemeProvider } from '@EstudioGallo/multi';
 
 <MuiThemeProvider>{children}</MuiThemeProvider>;
 ```
+
+[1^]: https://mui.com/x/introduction/licensing
