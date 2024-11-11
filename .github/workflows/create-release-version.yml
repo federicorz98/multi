@@ -77,14 +77,16 @@ jobs:
 
       - name: Update README.md with new version
         run: |
-          # Define the pattern and replacement text
-          sed -i "s/@estudiogallo\/multi@[0-9]*\.[0-9]*\.[0-9]*/@estudiogallo\/multi@$new_version/" README.md
+          # Define the pattern and replacement the new version
+          sed -i "s/npm install @estudiogallo\/multi@[0-9]*\.[0-9]*\.[0-9]*/npm install @estudiogallo\/multi@$new_version/" README.md
 
       - name: Update package.json version
         run: |
           # Use jq to update the version field in package.json
           jq '.version = env.new_version' package.json > temp.json && mv temp.json package.json
 
+      - name: Commit and push changes
+        run: |
           # Commit and push the updated package.json
           git add package.json
           git commit -m "Release version to $new_version"
